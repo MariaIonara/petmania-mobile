@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 
+
 export default function Index() {
 
   const [pets, setPets] = useState([]);
@@ -20,9 +21,10 @@ export default function Index() {
     
   }
 
-  const Item = ({pet}) => (    
+  //ver com Hugo
+  const Item = ({ pet }) => (    
     <View style={styles.item}>
-      <Text>{pet.nomedopet}</Text>
+      <Text style={styles.texto}>{pet.nomedopet}</Text>
     </View>
   );
 
@@ -46,12 +48,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    padding: 10
+    padding: 10,
+    backgroundColor: "#357DB7",
   },
 
-  item: {
+  item: {  
     padding: 20,
-    backgroundColor: "green"
+    backgroundColor: "#422A13",
+  },
+
+  texto: {
+    color: '#E2DFDD',
   }
 
 })
