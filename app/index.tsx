@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 
 
 export default function Index() {
 
   const [pets, setPets] = useState([]);
+  const [filteredPets, setFilteredPets] = useState([]);
+  const [pesquisa, setPesquisa] = useState([]);
 
   useEffect(() => {    
     fetchPets();
@@ -12,13 +14,17 @@ export default function Index() {
 
   const fetchPets = async () => {
     try {
-      const response = await fetch('https://00fvcqqh-3000.brs.devtunnels.ms/api/pets');      
+      const response = await fetch('https://00fvcqqh-3000.brs.devtunnels.ms/api/pets');
       const data = await response.json();      
       setPets(data);
     } catch (error) {
       console.error(error);
     }
     
+  }
+
+  const filterPets = () => {
+
   }
 
   //ver com Hugo
@@ -31,7 +37,8 @@ export default function Index() {
   return (
     <View
       style={styles.container}
-    >
+    > 
+      <TextInput style={styles.inputs} value={pesquisa} onChangeText={setPesquisa} > </TextInput>
       <FlatList
         data={pets}
         renderItem={ ({item}) => <Item pet={item} />}
@@ -59,6 +66,14 @@ const styles = StyleSheet.create({
 
   texto: {
     color: '#E2DFDD',
-  }
+  },
+
+  inputs: {
+      borderWidth: 1,
+      borderColor: 'black', 
+      marginBottom: 15,
+      width: 200,
+      paddingHorizontal: 10
+    }
 
 })
