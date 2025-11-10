@@ -1,5 +1,6 @@
+import { Link, router } from 'expo-router';
 import { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function Index() {
 
@@ -44,6 +45,7 @@ export default function Index() {
   );
 
   return (
+    
       <View
         style={styles.container}
       >
@@ -63,7 +65,13 @@ export default function Index() {
           </View>
         )
       }
-        
+        <Link href={"/telaInicial"} > 
+          voltar
+        </Link>
+        {/*<Button 
+          title="Inicial"
+          onPress={() => router.push('/telaInicial')}
+        />*/}
       </View>
   );
 }
