@@ -17,7 +17,7 @@ export default function Page() {
                 <View style={styles.containerButton}>
                     <Button
                         title="LOGIN"
-                        color='#ffffffff'
+                        color='#3C2A02'
                         onPress={() => router.push('/')}
                     />
                 </View>
