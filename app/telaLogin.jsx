@@ -1,7 +1,19 @@
 import { Link, router } from 'expo-router';
 import { Button, Image, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
+import * as Google from 'expo-auth-session/providers/google';
+import { GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { auth } from '../../firebaseConfig';
+
 export default function Page() {
+
+const [request, response, promptAsync] = Google.useAuthRequest({
+        expoClientId: '928270835007-1d2evr5ghjvtfdnbatejrm7q37968fem.apps.googleusercontent.com', // ID Cliente OAuth do console do Google Cloud
+        webClientId: '928270835007-1d2evr5ghjvtfdnbatejrm7q37968fem.apps.googleusercontent.com',
+    });
+
+
     return (
         <ScrollView style={styles.container}>
             <View style={styles.centro}>
