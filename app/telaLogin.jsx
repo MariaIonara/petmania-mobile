@@ -13,7 +13,6 @@ const [request, response, promptAsync] = Google.useAuthRequest({
         webClientId: '928270835007-1d2evr5ghjvtfdnbatejrm7q37968fem.apps.googleusercontent.com',
     });
 
-
     return (
         <ScrollView style={styles.container}>
             <View style={styles.centro}>
