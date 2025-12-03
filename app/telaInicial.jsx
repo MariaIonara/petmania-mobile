@@ -10,7 +10,7 @@ export default function Page() {
                 <View style={styles.containerButton}>
                     <Button
                         title="INICIAR"
-                        color='#3C2A02'
+                        color='#ffffffff'
                         onPress={() => router.push('/telaLogin')}
                     />
                 </View>
