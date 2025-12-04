@@ -11,9 +11,9 @@ export default function RootLayout() {
 
   return (
     <Stack>
-      <Stack.Screen name="telaInicial" options={{presentation: 'fullScreenModal', title: 'Inicial'}} />
-      <Stack.Screen name="index" options={{presentation: 'fullScreenModal', title: 'Index'}} />
+      <Stack.Screen name="index" options={{presentation: 'fullScreenModal', title: 'Tela Inicial'}} />
       <Stack.Screen name="telaLogin" options={{presentation: 'fullScreenModal', title: 'Login'}} />
+      <Stack.Screen name="telaPet" options={{presentation: 'fullScreenModal', title: 'Pets'}} />
     </Stack>
 
       /*<Stack

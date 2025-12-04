@@ -1,8 +1,6 @@
 import { Link } from 'expo-router';
 import { useState } from "react";
-import { Alert, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Image, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 
 export default function Page() {
@@ -12,6 +10,7 @@ export default function Page() {
     const [loading, setLoading] = useState(false);
 
 
+    /*
     async function loginEmailSenha() {
         if (!email || !senha) {
             return Alert.alert("Erro", "Preencha email e senha.");
@@ -46,7 +45,7 @@ export default function Page() {
             setLoading(false);
             Alert.alert("Erro", "Falha ao conectar ao servidor.");
         }
-    }
+    }*/
 
     return (
         <ScrollView style={styles.container}>
@@ -66,14 +65,17 @@ export default function Page() {
                         color='#ffffffff'
                         onPress={() => router.push('/')}
                     />*/}
-                    <TouchableOpacity
+                    {/*<TouchableOpacity
                         style={[styles.button, styles.emailButton]}
-                        onPress={loginEmailSenha}
+                        onPress={TelaPet}
                     >
                         <Text style={styles.buttonText}>
                             {loading ? "Entrando..." : "Login com Email"}
                         </Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity>*/}
+
+                    <Link href={"/telaPet"}>Entrar</Link>
+                    
                 </View>
                 <View style={styles.cachorrinho}>
                     <Image source={require('../assets/images/cachorro.png')} />
